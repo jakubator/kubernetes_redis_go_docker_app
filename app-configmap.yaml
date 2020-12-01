@@ -6,3 +6,6 @@ data:
     redis-service: my-release-redis-master:6379
     redis-host: my-release-redis-master
     port: "8080"
+    redis-db: "0"
+    redis-port: "6379"
+    

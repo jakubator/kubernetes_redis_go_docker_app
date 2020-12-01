@@ -18,21 +18,6 @@ spec:
                   imagePullPolicy: IfNotPresent # pull image from the repository (dockerhub) always
                   ports:
                     - containerPort: 8080 # run on port 8080
-                  livenessProbe: # To check the health of the Pod
-                    httpGet:
-                      path: /health
-                      port: 8080
-                      scheme: HTTP
-                    initialDelaySeconds: 5
-                    periodSeconds: 15
-                    timeoutSeconds: 5
-                  readinessProbe: # To check if the Pod is ready to serve traffic or not
-                    httpGet:
-                      path: /readiness
-                      port: 8080
-                      scheme: HTTP
-                    initialDelaySeconds: 5
-                    timeoutSeconds: 1   
                   env: # list of env variables passed to the app
                     - name: PORT # PORT 
                       valueFrom:
